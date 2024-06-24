@@ -19,6 +19,26 @@
     "extract_input": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n",
     "extract_input_with_system_prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nA chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n"
   },
+  "RLHFlow/LLaMA3-iterative-DPO-final": {
+    "model_name": "RLHFlow/LLaMA3-iterative-DPO-final",
+    "stop_tokens": [
+      "<|eot_id|>",
+      "<|end_of_text|>",
+      "<|starter_header_id|>",
+      "<|end_header_id|>"
+    ],
+    "stop_token_ids": [
+      128009,
+      128001,
+      128006,
+      128007
+    ],
+    "stop_tokens_assistant": [
+      "assistant"
+    ],
+    "extract_input": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\n",
+    "extract_input_with_system_prompt": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\nA chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n"
+  },
   "meta-llama/Meta-Llama-3-70B-Instruct": {
     "model_name": "meta-llama/Meta-Llama-3-70B-Instruct",
     "stop_tokens": [
@@ -129,6 +149,25 @@
   },
   "mistralai/Mistral-7B-Instruct-v0.3": {
     "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+    "stop_tokens": [
+      "<s>",
+      "</s>",
+      "[INST]",
+      "[/INST]"
+    ],
+    "stop_token_ids": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "stop_tokens_assistant": [
+      "assistant"
+    ],
+    "extract_input": "<s> [INST] "
+  },
+"xDAN2099/xDAN-L3-MoE-Performance-RLHF-0416": {
+    "model_name": "xDAN2099/xDAN-L3-MoE-Performance-RLHF-0416",
     "stop_tokens": [
       "<s>",
       "</s>",
