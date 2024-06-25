@@ -10,7 +10,7 @@ device="0,1,2,3"
 tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
-batch_size=10
+batch_size=5
 API_KEY="bbf6fdb7b1b3c09797864bddd08f0b582421b522d807ea6d8216684947ef812b"
 API_URL="https://api.together.xyz/v1/chat/completions"
 
@@ -25,7 +25,6 @@ CUDA_VISIBLE_DEVICES='' python ../exp/gen_res.py \
     --api True \
     --api_url $API_URL \
     --api_key $API_KEY \
-    --gpu_memory_utilization $gpu_memory_utilization \
     --input_file /workspace/magpie/data/Qwen2-72B-Instruct_topp1_temp1_1719241315/Magpie_Qwen2-72B-Instruct_500000_1719241315_ins.json 
 
 echo "[magpie.sh] Finish Generating Responses!"
