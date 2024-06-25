@@ -10,7 +10,7 @@ device="0,1,2,3"
 tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
-batch_size=5
+batch_size=1
 API_KEY="dcb755c19ca4a0b591c8911ddd3ec5b5b3622e16d52e9e933edd1fedae78d423"
 API_URL="https://api.together.xyz/v1/chat/completions"
 
