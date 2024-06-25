@@ -11,7 +11,7 @@ tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
 batch_size=5
-API_KEY="bbf6fdb7b1b3c09797864bddd08f0b582421b522d807ea6d8216684947ef812b"
+API_KEY="dcb755c19ca4a0b591c8911ddd3ec5b5b3622e16d52e9e933edd1fedae78d423"
 API_URL="https://api.together.xyz/v1/chat/completions"
 
 echo "[magpie.sh] Start Generating Responses..."
