@@ -197,8 +197,7 @@
     "stop_tokens_assistant": [
       "assistant"
     ],
-    "extract_input": "<s> [INST] ",
-    "pre_query_template": "<s>user\n "
+    "pre_query_template": "<s>user\n"
   },
   "google/gemma-1.1-7b-it": {
     "model_name": "google/gemma-1.1-7b-it",
