@@ -50,18 +50,3 @@ CUDA_VISIBLE_DEVICES=$device python ../exp/gen_ins.py \
     --timestamp $timestamp \
 
 echo "[magpie.sh] Finish Generating Instructions!"
-
-echo "[magpie.sh] Start Generating Responses..."
-CUDA_VISIBLE_DEVICES=$device python ../exp/gen_res.py \
-    --model_path microsoft/WizardLM-2-8x22B \
-    --batch_size 10 \
-    --top_p 1 \
-    --temp 0 \
-    --rep 1 \
-    --api True \
-    --api_url https://api.together.xyz/v1/chat/completions \
-    --api_key dcb755c19ca4a0b591c8911ddd3ec5b5b3622e16d52e9e933edd1fedae78d423 \
-    --input_file /workspace/magpie/data/xDAN-L3-MoE-Performance-RLHF-0416_topp1_temp1_1719421016/Magpie_xDAN-L3-MoE-Performance-RLHF-0416_1000_1719421016_ins.json
-
-
-echo "[magpie.sh] Finish Generating Responses!"
