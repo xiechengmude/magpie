@@ -1,5 +1,5 @@
 model_path=${1:-"xDAN2099/xDAN-L3-MoE-Performance-RLHF-0416"}
-total_prompts=${2:-1000000}
+total_prompts=${2:-2000000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
 res_topp=${5:-1}
