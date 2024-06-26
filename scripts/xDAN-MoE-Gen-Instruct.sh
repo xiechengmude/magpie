@@ -1,5 +1,5 @@
 model_path=${1:-"xDAN2099/xDAN-L3-MoE-Performance-RLHF-0416"}
-total_prompts=${2:-1000000}
+total_prompts=${2:-2000000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
 res_topp=${5:-1}
@@ -9,7 +9,7 @@ device="0,1,2,3"
 tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
-batch_size=20
+batch_size=40
 
 # Get Current Time
 timestamp=$(date +%s)
