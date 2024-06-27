@@ -1,4 +1,4 @@
-model_path=${1:-"meta-llama/Meta-Llama-3-8B-Instruct"}
+model_path=${1:-"alpindale/magnum-72b-v1"}
 total_prompts=${2:-1000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
@@ -45,7 +45,7 @@ CUDA_VISIBLE_DEVICES=$device python ../exp/gen_ins.py \
     --temp $ins_temp \
     --tensor_parallel $tensor_parallel \
     --gpu_memory_utilization $gpu_memory_utilization \
-    --control_tasks translation \
+    --control_tasks writing \
     --n $n \
     --job_name $job_name \
     --timestamp $timestamp \
