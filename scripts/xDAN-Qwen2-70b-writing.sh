@@ -5,8 +5,8 @@ ins_temp=${4:-1}
 res_topp=${5:-1}
 res_temp=${6:-0}
 res_rep=1
-device="0"
-tensor_parallel=1
+device="0,1,2,3"
+tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
 batch_size=20
@@ -47,7 +47,7 @@ CUDA_VISIBLE_DEVICES=$device python ../exp/gen_ins.py \
     --temp $ins_temp \
     --tensor_parallel $tensor_parallel \
     --gpu_memory_utilization $gpu_memory_utilization \
-    --control_tasks $control_tasks \
+    --control_tasks $control_task \
     --n $n \
     --job_name $job_name \
     --timestamp $timestamp \
