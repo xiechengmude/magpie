@@ -247,7 +247,7 @@
     "stop_tokens_assistant": [
       "assistant"
     ],
-    "pre_query_template": "<s>USER:\n"
+    "pre_query_template": "<s>[INST]user[/INST]\n\n"
   },
 "microsoft/WizardLM-2-8x22B": {
     "model_name": "microsoft/WizardLM-2-8x22B",
