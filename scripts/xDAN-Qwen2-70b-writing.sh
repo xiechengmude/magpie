@@ -1,5 +1,5 @@
 model_path=${1:-"meta-llama/Meta-Llama-3-8B-Instruct"}
-total_prompts=${2:-100000}
+total_prompts=${2:-1000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
 res_topp=${5:-1}
