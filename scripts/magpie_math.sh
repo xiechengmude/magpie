@@ -10,12 +10,13 @@ tensor_parallel=1
 gpu_memory_utilization=0.95
 n=200
 batch_size=200
-
+control_task="math"
 # Get Current Time
 timestamp=$(date +%s)
 
 # Generate Pretty Name
-job_name="${model_path##*/}_topp${ins_topp}_temp${ins_temp}_${timestamp}"
+#job_name="${model_path##*/}_topp${ins_topp}_temp${ins_temp}_${timestamp}"
+job_name="${model_path##*/}_task_${control_task}_topp${ins_topp}_temp${ins_temp}_${timestamp}"
 
 ### Setup Logging
 log_dir="data"
@@ -34,6 +35,7 @@ echo "[magpie.sh] Instruction Generation Config: temp=$ins_temp, top_p=$ins_topp
 echo "[magpie.sh] Response Generation Config: temp=$res_temp, top_p=$res_topp, rep=$res_rep"
 echo "[magpie.sh] System Config: device=$device, n=$n, batch_size=$batch_size, tensor_parallel=$tensor_parallel"
 echo "[magpie.sh] Timestamp: $timestamp"
+echo "[magpie.sh] Task: $control_task"
 echo "[magpie.sh] Job Name: $job_name"
 
 echo "[magpie.sh] Start Generating Instructions..."
@@ -45,7 +47,7 @@ CUDA_VISIBLE_DEVICES=$device python ../exp/gen_ins.py \
     --temp $ins_temp \
     --tensor_parallel $tensor_parallel \
     --gpu_memory_utilization $gpu_memory_utilization \
-    --control_tasks math \
+    --control_tasks $control_task \
     --n $n \
     --job_name $job_name \
     --timestamp $timestamp \

@@ -1,21 +1,22 @@
-model_path=${1:-"meta-llama/Meta-Llama-3-8B-Instruct"}
+#!/bin/bash
+
+model_path=${1:-"Qwen/Qwen2-72B-Instruct"}
 total_prompts=${2:-1000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
 res_topp=${5:-1}
 res_temp=${6:-0}
 res_rep=1
-device="0"
-tensor_parallel=1
+device="0,1,2,3"
+tensor_parallel=4
 gpu_memory_utilization=0.95
 n=200
-batch_size=200
-control_task="code"
+batch_size=20
+control_task="writing"
 # Get Current Time
 timestamp=$(date +%s)
 
 # Generate Pretty Name
-#job_name="${model_path##*/}_topp${ins_topp}_temp${ins_temp}_${timestamp}"
 job_name="${model_path##*/}_task_${control_task}_topp${ins_topp}_temp${ins_temp}_${timestamp}"
 
 ### Setup Logging
@@ -51,6 +52,7 @@ CUDA_VISIBLE_DEVICES=$device python ../exp/gen_ins.py \
     --n $n \
     --job_name $job_name \
     --timestamp $timestamp \
+    --disable_early_stopping \
 
 echo "[magpie.sh] Finish Generating Instructions!"
 
