@@ -1,4 +1,4 @@
-model_path=${1:-"deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"}
+model_path=${1:-"deepseek-ai/DeepSeek-Coder-V2-Instruct"}
 total_prompts=${2:-1000}
 ins_topp=${3:-1}
 ins_temp=${4:-1}
